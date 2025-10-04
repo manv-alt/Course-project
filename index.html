@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: rgb(249, 249, 235);
+        }
+
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* background: linear-gradient(90deg, #003366, #0055aa); */
+            background: transparent;
+            height: 80px;
+            width: 100%;
+            position: fixed;
+            z-index: 1000;
+            animation-name: scroll;
+            animation-timeline: scroll(y);
+        }
+
+        @keyframes scroll {
+            0% {
+                background: rgba(0, 0, 0, 0.016);
+                backdrop-filter: blur(5px);
+            }
+
+            50% {
+                background: linear-gradient(90deg, #003366, #0055aa);
+            }
+
+            100% {
+                background: linear-gradient(90deg, #003366, #0055aa);
+            }
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            margin-right: 20px;
+            gap: 20px;
+
+        }
+
+        li a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 520;
+
+        }
+
+        li a:hover {
+            color: #f9f9bf;
+            text-decoration: underline;
+            font-weight: 800;
+
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-left: 15px;
+        }
+
+        img {
+            border-radius: 50%;
+        }
+
+        .logo h1 {
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            word-spacing: -8px;
+            margin: 0;
+
+        }
+
+        footer {
+            background: linear-gradient(90deg, #003366, #0055aa);
+            color: white;
+            padding-top: 20px;
+            width: 100%;
+        }
+
+
+        .herosection {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .herosection img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            border-radius: 0;
+
+        }
+
+        .herosection::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 30, 60, 0.55);
+            /* dark overlay for readability */
+            z-index: -1;
+        }
+
+        .hero-content h1 {
+            margin-top: 1px;
+            color: white;
+            font-size: 6rem;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+
+        .hero-content button {
+
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            background: #ff6b35;
+            color: white;
+
+        }
+
+        .hero-content button:hover {
+            background: #e85a2c;
+        }
+
+        .content h1 {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 40px;
+            font-weight: 650;
+            font-family: poppins, sans-serif;
+            padding-left: 10vh;
+        }
+
+        .category {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 50px;
+            margin: 20px;
+            width: 120vh;
+            padding-left: 40vh;
+        }
+
+        .categories {
+            width: 200px;
+            height: 180px;
+            border: 2px solid black;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .categories img {
+            border-radius: 2px;
+            width: 100%;
+            height: 80%;
+
+        }
+
+        .categories h4 {
+            text-align: center;
+            font-family: poppins, sans-serif;
+            font-weight: 600;
+        }
+
+        .categories a {
+            text-decoration: none;
+            color: black;
+            font-family: poppins, sans-serif;
+            font-weight: 600;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .categories:hover {
+            text-decoration: underline;
+            font-weight: 800;
+            transform: scale(1.05);
+            box-shadow: 0px 2px 5px rgba(84, 84, 82, 0.409);
+        }
+
+        .f1 {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+        }
+
+        .c1 {
+            width: 15%;
+            height: 250px;
+            margin-left: 55px;
+
+        }
+
+        .c1 h2 {
+            text-align: center;
+            font-size: 35px;
+            font-weight: bolder;
+        }
+
+        .c1 p {
+            font-size: 20px;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        .c2 {
+
+            width: 15%;
+            margin-left: px;
+            text-align: center;
+        }
+
+        .c2 h4 {
+            text-align: center;
+            font-size: 4.5vh;
+            font-weight: bolder;
+        }
+
+        .c2 ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .c2 ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .c2 ul li a:hover {
+            color: #f9f9bf;
+            text-decoration: underline;
+        }
+
+        .c3 {
+            text-align: center;
+        }
+
+        .c3 h4 {
+            font-size: 4.5vh;
+            font-weight: bolder;
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 24px;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #f9f9bf;
+            transform: scale(1.2);
+        }
+
+        @media only screen and (max-width: 600px) {
+            header {
+                width: 162vh;
+                height: 22vh;
+
+            }
+
+            li a {
+                font-size: 4.5vh;
+                font-weight: bold;
+                padding: 2vh;
+
+            }
+
+            ul {
+                margin-right: -20vh;
+            }
+
+            .logo img {
+                width: 15vh;
+                height: 15vh;
+            }
+
+            .logo h1 {
+                font-size: 6.5vh;
+                font-weight: 800;
+                color: rgb(255, 255, 255);
+            }
+
+            .herosection img {
+                width: 190vh;
+                height: 70vh;
+                object-fit: fill;
+            }
+
+            .content h1 {
+                text-align: center;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="ChatGPT Image Sep 9, 2025, 10_18_14 AM.png" alt="img1" width="70px" height="70px">
+            <h1>Pack & Go</h1>
+
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="about.html">About us</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact us</a>
+                </li>
+
+                <li>
+                    <a href="#">Login</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="herosection">
+            <img src="cover.jpg" alt="img2">
+            <div class="hero-content">
+                <h1>Travel Smart, Travel Light With Pack & Go</h1>
+                <p>Premium accessories to make your journey easier</p>
+                <button>Shop Now</button>
+            </div>
+        </div>
+    </section>
+    <section class="content">
+        <h1>Category</h1>
+        <div class="category">
+            <div class="categories">
+                <a href="index1.html"><img src="bag.png" alt="">Backpacks</a>
+            </div>
+            <div class="categories">
+                <a href="index1.html"><img src="comfort.png" alt="">Comfort & Convenience</a>
+
+            </div>
+            <div class="categories">
+                <a href="index1.html"><img src="riding.png" alt="">Riding Gears</a>
+            </div>
+            <div class="categories">
+                <a href="index1.html"><img src="adventure.png" alt="">Adventure Gear</a>
+
+            </div>
+            <div class="categories">
+                <a href="index1.html"><img src="travel.png" alt="">Tech & Gadget</a>
+            </div>
+            <div class="categories">
+                <a href="index1.html"><img src="other.png" alt="">Accessories & Essential</a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="f1">
+            <div class="c1">
+                <h2>Pack & Go</h2>
+                <p>Pack & Go is a
+                    travel accessories brand
+                    dedicated to making your
+                    journeys easier</p>
+            </div>
+            <div class="c2">
+                <h4>Qick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="c3">
+                <h4>Social Media</h4>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://instagram.com" target="_blank"> <i class="fa-brands fa-x-twitter"></i> </a>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
